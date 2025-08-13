@@ -1,7 +1,18 @@
+using BulkyWeb.Data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+/* Add entity framework core to project
+ * Init options object, which is used to configure the database connection, using SqlServer
+ * This will allow the application to connect to a SQL Server database.
+ * Init ConnectionStrings (section in appsettings.json with a connection string named DefaultConnection)
+ */
+builder.Services.AddDbContext<ApplicationDbContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 var app = builder.Build();
 
