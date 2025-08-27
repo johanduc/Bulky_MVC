@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Bulky.Utility
+namespace BulkyBook.Utility
 {
     //SD = static details
     public static class SD
